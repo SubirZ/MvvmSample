@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">mvvmSampleApp</string>
+    <string name="upcomimg">Upcoming</string>
+    <string name="in_theaters">In Theaters</string>
+    <string name="tv">tv</string>
+    <string name="movie">movie</string>
+</resources>

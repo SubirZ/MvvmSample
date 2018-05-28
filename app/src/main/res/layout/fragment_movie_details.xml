@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.ddd.mvvmsampleapp.model.pojo.movies.movie_details.MoviesDetails" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:elevation="10dp"
+            android:translationZ="6dp">
+
+            <ImageView
+                android:id="@+id/ivBanner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:id="@+id/rlVotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginEnd="7dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/drawable_circle_black" />
+
+                <com.ddd.mvvmsampleapp.view.ui.custom.SeekArc
+                    android:id="@+id/saVoteCount"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:padding="7dp"
+                    seekarc:arcColor="#423D13"
+                    seekarc:arcWidth="5dp"
+                    seekarc:enabled="false"
+                    seekarc:progress="100"
+                    seekarc:progressColor="@color/colorAccent"
+                    seekarc:progressWidth="5dp"
+                    seekarc:rotation="0"
+                    seekarc:roundEdges="true"
+                    seekarc:startAngle="0"
+                    seekarc:sweepAngle="360" />
+
+                <TextView
+                    android:id="@+id/tvCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="NA"
+                    android:textColor="@android:color/white"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginStart="12dp"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp">
+
+            <ImageView
+                android:id="@+id/ivPoster"
+                android:layout_width="100dp"
+                android:layout_height="1410dp" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/ivPoster"
+                android:textColor="#3D3D3D"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTagLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTitle"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/ivPoster"
+                android:textColor="#484747"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvOverview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTagLine"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/ivPoster"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvGenre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingStart="7dp"
+            seekarc:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+    </LinearLayout>
+</layout>
